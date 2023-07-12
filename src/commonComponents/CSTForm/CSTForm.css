@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #222628;
+    border-radius: 1rem;
+    min-width: 350px;
+}
+
+.form-control {
+    border-color: #222628 !important;
+}
+
+div {
+    color: #222628
+}
+
+.btn-link {
+    color: #222628 !important;
+}

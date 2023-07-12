@@ -1,0 +1,3 @@
+{
+  "uploadwrite.invalid.input": "The matrix should be enclosed in double square brackets []\nEach row of the matrix should be enclosed in square brackets []\nElements within each row should be separated by commas\nThe matrix should be a square matrix, meaning the number of rows should be equal to the number of columns\nEach element in the matrix should be a number\nThe matrix should satisfy the property: matrix[i][j] === matrix[j][i]"
+}

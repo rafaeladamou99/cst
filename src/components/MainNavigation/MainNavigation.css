@@ -1,0 +1,9 @@
+.navbar-brand {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.navbar-brand:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.90) !important;
+  }
+  

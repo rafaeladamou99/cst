@@ -1,0 +1,17 @@
+.card {
+  height: 220px !important;
+  width: 350px !important;
+  margin: 10px !important;
+  border: 2px solid black !important;
+  padding: 5px;
+
+  .card-title {
+    text-decoration: underline;
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+  border-width: 3px !important;
+  padding: 3px !important;
+}
