@@ -52,10 +52,10 @@ function App() {
             { path: "/account", element: <Account /> },
             { path: "/calculate", element: <Calculate /> },
             { path: "/mycmsts", element: <MyCMSTs /> },
-            { path: "/mycmsts/:calcId", element: <IndividualCMST /> },
-            { path: "/about", element: <About /> }
+            { path: "/mycmsts/:calcId", element: <IndividualCMST /> }
           ]
-        }
+        },
+        { path: "/about", element: <About /> }
       ]
     }
   ])

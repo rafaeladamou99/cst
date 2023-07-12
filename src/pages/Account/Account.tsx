@@ -69,7 +69,7 @@ const Account = () => {
   ]
   return (
     <CSTForm submitButton={submitButton()} title="Account">
-      <h5>Mode</h5>
+      {/* <h5>Mode</h5>
       <ButtonGroup>
         {modes.map((mode, idx) => (
           <ToggleButton
@@ -85,7 +85,7 @@ const Account = () => {
             {mode.name}
           </ToggleButton>
         ))}
-      </ButtonGroup>
+      </ButtonGroup> */}
       {/* <h5>User's Email</h5>
       <Form.Group controlId="loginForm.email">
         <Form.Control type="email" placeholder="email" value={email} disabled />
