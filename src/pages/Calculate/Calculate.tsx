@@ -8,7 +8,7 @@ import UploadWrite from "./UploadWrite/UploadWrite"
 enum CalculateRender {
   calculate = 0,
   draw = 1,
-  uploadWrite = 2,
+  uploadWrite = 2
 }
 
 const Calculate = () => {
@@ -23,9 +23,9 @@ const Calculate = () => {
     <>
       {!show ? (
         <div className="calculate">
-          <CSTCard title="Draw" onClick={() => setShow(CalculateRender.draw)}>
+          {/* <CSTCard title="Draw" onClick={() => setShow(CalculateRender.draw)}>
             Here you can use the dedicated tool to draw the graph you desire
-          </CSTCard>
+          </CSTCard> */}
           <CSTCard
             title="Upload/Write"
             onClick={() => setShow(CalculateRender.uploadWrite)}
