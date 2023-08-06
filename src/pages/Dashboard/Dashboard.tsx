@@ -11,26 +11,23 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <CSTCard title="Account" onClick={() => navigateTo("/account")}>
-        <div>
-          Here you can change your password, and edit the visual aspect of this
-          page. The default is light mode, but you can change it to dark mode.
-        </div>
+        <div>Here, for now, you can only change your password.</div>
       </CSTCard>
       <CSTCard title="Calculate" onClick={() => navigateTo("/calculate")}>
         <div>
           Here you can make your calculations. You can add your weighted graph,
-          add the desired constraint, and calculate the spanning tree based on
-          that. The graph entered can be in form of a matrix manually entered,
-          written in a file, again in form of a matrix, or drawn. More details
-          on the page
+          add the desired constraint, and calculate a minimum spanning tree
+          based on that. The graph entered can be in form of a matrix manually
+          entered, written in a file, again in form of a matrix. More details on
+          the page.
         </div>
       </CSTCard>
       <CSTCard title="MyCMSTs" onClick={() => navigateTo("/mycmsts")}>
         <div>
-          Here you can view your calculations. You can see the entered weighted
-          graph, the entered constraint, and the calculated spanning tree based
-          on that. Both the graph and the spanning tree can be exported in form
-          of a matrix or visually.
+          Here you can view your calculations. You can visually see the entered
+          weighted graph, the entered constraint, and the calculated spanning
+          tree based on that. Both the graph and the spanning tree can be
+          exported in form of a matrix.
         </div>
       </CSTCard>
       <CSTCard title="About" onClick={() => navigateTo("/about")}>

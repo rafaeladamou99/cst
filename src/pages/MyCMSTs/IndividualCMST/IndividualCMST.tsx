@@ -73,29 +73,6 @@ const IndividualCMST = () => {
     }
   }
 
-  // const getSpanningTreeApiFn = (mst: Calculation) => {
-  //   const cmsts: SpanningTreeType[] = []
-  //   calculation?.spanningTrees?.map((mst: SpanningTree) => {
-  //     if (mst?.spanningTree) {
-  //       getSpanningTreeApi(mst.spanningTree)
-  //         .then((res) => {
-  //           cmsts.push({
-  //             spanningTree: res,
-  //             weightSum: mst.weightSum,
-  //             constraint: mst.constraint,
-  //             constraintAmount: mst.constraintAmount
-  //           })
-  //           setLoading(false)
-  //           console.log(res)
-  //         })
-  //         .catch((error) => {
-  //           setLoading(false)
-  //         })
-  //     }
-  //   })
-  //   setSpanningTrees(cmsts)
-  // }
-
   const getSpanningTreeApiFn = async (mst: Calculation) => {
     const cmsts: SpanningTreeType[] = []
     const promises = calculation?.spanningTrees?.map((mst: SpanningTree) => {
@@ -213,9 +190,6 @@ const IndividualCMST = () => {
   }
 
   const downloadMatrix = (matrix: string, filename: string) => {
-    // const content = matrix
-    //   .map((row) => row.map((cell) => String(cell)).join(",\t"))
-    //   .join("\n")
     const content = matrix
     const blob = new Blob([content], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
@@ -225,7 +199,6 @@ const IndividualCMST = () => {
     link.download = filename
     link.click()
 
-    // Clean up the URL object
     URL.revokeObjectURL(url)
   }
 
@@ -345,7 +318,6 @@ const IndividualCMST = () => {
           )}
           <Button
             variant="dark"
-            // type="submit"
             size="sm"
             onClick={() => {
               setShowAddCmstModal(true)

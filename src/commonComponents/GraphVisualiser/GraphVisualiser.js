@@ -4,17 +4,14 @@ import * as d3 from "d3"
 function GraphVisualiser({ matrix }) {
   const [selectedNode, setSelectedNode] = useState(null)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-  const [screenHeight, setScreenHeight] = useState(window.innerHeight)
   const svgRef = useRef()
   const [k, setK] = useState(10 / matrix.length)
   const [x, setX] = useState(0)
   const [y, setY] = useState(0)
-  // const [nodes, setNodes] = useState([])
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth)
-      setScreenHeight(window.innerHeight)
     }
 
     window.addEventListener("resize", handleResize)
@@ -41,21 +38,6 @@ function GraphVisualiser({ matrix }) {
       y: Math.random() * 1080 * 0.9
     }))
   }, [])
-
-  // useEffect(() => {
-  //   const tempNodes = matrix.map((row, i) => ({
-  //     index: i,
-  //     x: Math.random() * 1920 * 0.9,
-  //     y: Math.random() * 1080 * 0.9
-  //   }))
-  //   setNodes(tempNodes)
-  // }, [matrix])
-
-  // const nodes = matrix.map((row, i) => ({
-  //   index: i,
-  //   x: Math.random() * 1920 * 0.9,
-  //   y: Math.random() * 1080 * 0.9
-  // }))
 
   console.log(nodes)
 
@@ -87,9 +69,7 @@ function GraphVisualiser({ matrix }) {
     )
     .stop()
 
-  // for (let i = 0; i < 100; i++) {
   simulation.tick()
-  // }
 
   const handleNodeClick = (node) => {
     setSelectedNode(node)
@@ -121,8 +101,6 @@ function GraphVisualiser({ matrix }) {
               strokeWidth={link.weight}
             />
           ))}
-          {/* </g> */}
-          {/* <g transform={`translate(${screenWidth * 0.9 / 4},${(screenWidth * 0.9 * 9) / 16 / 4})`}> */}
           {nodes.map((node) => (
             <circle
               key={node.index}
@@ -136,35 +114,19 @@ function GraphVisualiser({ matrix }) {
               style={{ cursor: "pointer" }}
             />
           ))}
-          {/* </g> */}
-          {/* {selectedNode && (
-        // x and y are the coordinates of the rendered element
-        <text x={selectedNode.x + 20} y={selectedNode.y - 20}>
-          Selected node: {selectedNode.index}
-        </text>
-      )} */}
-          {/* <g transform={`translate(${screenWidth * 0.9 / 4},${(screenWidth * 0.9 * 9) / 16 / 4})`}> */}
-          {nodes.map(
-            (
-              node // x and y are the coordinates of the rendered element
-            ) => (
-              <text x={node.x} y={node.y}>
-                {node.index}
-              </text>
-            )
-          )}
-          {nonZeroLinks.map(
-            (
-              link // x and y are the coordinates of the rendered element
-            ) => (
-              <text
-                x={(link.source.x + link.target.x) / 2}
-                y={(link.source.y + link.target.y) / 2}
-              >
-                {link.weight}
-              </text>
-            )
-          )}
+          {nodes.map((node) => (
+            <text x={node.x} y={node.y}>
+              {node.index}
+            </text>
+          ))}
+          {nonZeroLinks.map((link) => (
+            <text
+              x={(link.source.x + link.target.x) / 2}
+              y={(link.source.y + link.target.y) / 2}
+            >
+              {link.weight}
+            </text>
+          ))}
         </g>
       </g>
       <button>Zoom +</button>
